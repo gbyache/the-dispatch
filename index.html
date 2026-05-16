@@ -756,9 +756,13 @@ Community is built differently. It comes from specificity — knowing exactly wh
 
 // ── STORAGE KEYS ──────────────────────────────────
 function weekId() {
-  const d = new Date(), j = new Date(d.getFullYear(),0,1);
-  const w = Math.ceil(((d-j)/864e5 + j.getDay()+1)/7);
-  return `${d.getFullYear()}-W${String(w).padStart(2,'0')}`;
+  const d = new Date();
+  const dow = d.getDay() || 7;
+  const thu = new Date(d); thu.setDate(d.getDate() - dow + 4);
+  const year = thu.getFullYear();
+  const jan1 = new Date(year, 0, 1);
+  const w = Math.ceil(((thu - jan1) / 86400000 + 1) / 7);
+  return `${year}-W${String(w).padStart(2,'0')}`;
 }
 function sk(page,i)  { return `dp_${weekId()}_${page}_${i}`; }
 function pk(page,i)  { return `dp_p_${weekId()}_${page}_${i}`; }
@@ -773,8 +777,12 @@ function weekRange() {
   return `${f(mon)} – ${f(sun)}`;
 }
 function weekNum() {
-  const d=new Date(), j=new Date(d.getFullYear(),0,1);
-  return Math.ceil(((d-j)/864e5+j.getDay()+1)/7);
+  const d = new Date();
+  const dow = d.getDay() || 7;
+  const thu = new Date(d); thu.setDate(d.getDate() - dow + 4);
+  const year = thu.getFullYear();
+  const jan1 = new Date(year, 0, 1);
+  return Math.ceil(((thu - jan1) / 86400000 + 1) / 7);
 }
 
 // ── PROGRESS ──────────────────────────────────────
@@ -802,7 +810,8 @@ function drawDots(pct) {
     const x = cx + r*Math.cos(a);
     const y = cy + r*Math.sin(a);
     const active = n < Math.round(pct/100 * N);
-    const size = active ? 2.8 : 1.4;
+    const activeSize = 1.8 + (pct / 100) * 3.0;
+    const size = active ? activeSize : 1.4;
     ctx.beginPath();
     ctx.arc(x,y,size,0,Math.PI*2);
     ctx.fillStyle = active ? '#111111' : '#DDDDDD';
