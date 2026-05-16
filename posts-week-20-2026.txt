@@ -1,0 +1,131 @@
+# The Dispatch — Week of May 11–17, 2026 (Week 20)
+Generated: 2026-05-12T02:37:30.758Z
+
+═══════════════════════════════════════════════════════════
+MICHAEL LAWANSON — Post 1 (Strategy & Design)
+Post day: Monday · 8–9 AM
+═══════════════════════════════════════════════════════════
+
+There's a version of a brief that arrives with a logo, a color palette, and the instruction to "make it pop." That's not a brief. That's a permission slip to make noise without making meaning.
+
+The briefs worth taking seriously usually arrive with a question the client can't answer themselves — something like "we know what we do, but we don't know what we are." That's honest. That's useful.
+
+The best brand work starts there. Not with aesthetic decisions, but with the harder question of what this thing is actually about and who it's genuinely for. Everything downstream — the visuals, the language, the feel — flows from how clearly you can answer that.
+
+"Make it pop" is what you hear when strategy was skipped. You can pop your way into attention and still mean nothing to anyone.
+
+---
+Best time: Monday 8–9 AM
+Tip: Lead with the opener — it stops the scroll without being clever.
+
+═══════════════════════════════════════════════════════════
+MICHAEL LAWANSON — Post 2 (Strategy & Design)
+Post day: Wednesday · 12 PM
+═══════════════════════════════════════════════════════════
+
+Most identity projects fail before a single sketch gets made.
+
+Not because the designer isn't skilled. Not because the budget is wrong. Because the client and the designer never agreed on what problem they were actually solving.
+
+The designer thinks the problem is visual. The client thinks the problem is visual. But underneath, the real issue is usually about positioning, or a market they're trying to enter, or a perception they're trying to shift.
+
+You can design a beautiful system on top of an unresolved strategic question and it will look good for about six months before everyone starts asking why it isn't "working."
+
+The work that actually holds up is built on a foundation the client understands and believes. That takes longer to get to. It's also the only thing worth building on.
+
+---
+Best time: Wednesday 12 PM
+Tip: The last line is the payoff — make sure it lands before you post.
+
+═══════════════════════════════════════════════════════════
+MICHAEL LAWANSON — Post 3 (Mikey's Gourmet Chin Chin)
+Post day: Friday · 9 AM
+═══════════════════════════════════════════════════════════
+
+Chin chin has been on tables at West African celebrations my entire life. Weddings, holidays, family gatherings — a bowl shows up and disappears before most people even notice it was there.
+
+The strange thing is how rarely that cultural presence translates into serious brand attention. The product exists everywhere and the category barely exists in terms of how it's positioned, packaged, or talked about.
+
+That's exactly the gap Mikey's Gourmet Chin Chin is built to fill.
+
+This isn't about fancy packaging for the sake of it. It's about putting a product that has always been worth celebrating onto a stage that matches what it actually is — something made with real craft, rooted in a real culinary tradition, and worthy of the same attention any premium food brand gets.
+
+The quality is already there. We're just making sure the world can see it.
+
+[Add availability update or stockist info if applicable]
+
+---
+Best time: Friday 9 AM
+Tip: Replace the bracketed placeholder with a real availability or milestone detail before posting.
+
+═══════════════════════════════════════════════════════════
+WOLF AND PIGEONS — Post 1 (Industry Reaction)
+Post day: Monday · 8–9 AM
+═══════════════════════════════════════════════════════════
+
+The wave of arena naming rights deals over the past few years has created a quiet problem for sports brands: the venue name changes, but the brand identity never catches up.
+
+You end up with teams playing in a building with one name, a secondary logo referencing a different era, and a uniform set designed by committee years ago. None of it talks to each other.
+
+Naming rights deals are business decisions — understood. But the best organizations treat a new venue name as a brand moment. A reason to audit the full visual system, tighten the hierarchy, and ask whether everything still makes sense together.
+
+The teams that get this right use the deal as a forcing function. The ones that don't add another layer of mismatched identity on top of the pile.
+
+Fans notice. They might not say "your visual system lacks coherence" but they feel it when something is off.
+
+---
+Best time: Monday 8–9 AM
+Tip: If a specific naming rights deal or rebrand dropped this week, swap the opener to reference it directly.
+
+═══════════════════════════════════════════════════════════
+WOLF AND PIGEONS — Post 2 (Design Craft)
+Post day: Wednesday · 12 PM
+═══════════════════════════════════════════════════════════
+
+Digital-first thinking has quietly made a lot of sports brands weaker.
+
+When you design primarily for screens — optimized for a grid post, a mobile app, a digital board — you can produce something that looks clean and contemporary. What you sometimes lose is weight. Physical presence. The thing that reads from 300 feet away in a stadium when the lights are low and 20,000 people are moving.
+
+Live environments are unforgiving in a specific way. The logo on a jersey needs to hold up at full size and at thumbnail. The colorway needs to hit under arena lighting, not just ideal monitor conditions. The type needs to be readable on a flag someone's waving in section 112.
+
+The best sports identities were built with that scale in mind from the beginning. Not adapted for it later — built for it.
+
+Digital is where most people will see the brand. Live is where they'll feel it. Those are different problems and they need to be solved together.
+
+---
+Best time: Wednesday 12 PM
+Tip: Works well with a follow-up comment linking to a real example of a brand that nailed live-environment design.
+
+═══════════════════════════════════════════════════════════
+WOLF AND PIGEONS — Post 3 (Brand Philosophy)
+Post day: Friday · 9 AM
+═══════════════════════════════════════════════════════════
+
+The sports and entertainment brands that last share one thing: they know what they stand for when it's not game day.
+
+Anyone can build brand energy around a win streak. Winning is easy to design for. The test is what the brand does when the team is rebuilding, the venue is quiet, and there's no cultural moment to ride.
+
+The brands that hold up through that — the ones that keep fans connected during the low periods — have built something beyond the results. A visual language that means something. A voice that's consistent. A sense of belonging that doesn't depend on the scoreboard.
+
+That's not strictly a design problem. It's a clarity problem. Do the people running the brand actually know what it means to be part of this community beyond wins and losses?
+
+Design can't answer that question. But once you've answered it, the design can carry it a long way.
+
+---
+Best time: Friday 9 AM
+Tip: End of week is right for this one — reflective, not promotional. Let it breathe.
+
+═══════════════════════════════════════════════════════════
+REMINDERS BEFORE YOU POST
+═══════════════════════════════════════════════════════════
+
+1. Michael Post 3 (Mikey's): Swap in any current availability updates, stockist info, or milestones.
+2. W&P Post 1 (Industry): If a current rebrand or naming rights story dropped this week, update the opener to reference it specifically.
+3. Load posts into The Dispatch app by opening index.html in your browser.
+
+═══════════════════════════════════════════════════════════
+DISPATCH LOAD URLS (open index.html and append these)
+═══════════════════════════════════════════════════════════
+
+Michael posts: index.html?load=JTdCJTIycGFnZSUyMiUzQSUyMm1pY2hhZWwlMjIlMkMlMjJ3ZWVrJTIyJTNBJTIyMjAyNi1XMjAlMjIlMkMlMjJwb3N0cyUyMiUzQSU1QiUyMlRoZXJlJ3MlMjBhJTIwdmVyc2lvbiUyMG9mJTIwYSUyMGJyaWVmJTIwdGhhdCUyMGFycml2ZXMlMjB3aXRoJTIwYSUyMGxvZ28lMkMlMjBhJTIwY29sb3IlMjBwYWxldHRlJTJDJTIwYW5kJTIwdGhlJTIwaW5zdHJ1Y3Rpb24lMjB0byUyMCU1QyUyMm1ha2UlMjBpdCUyMHBvcC4lNUMlMjIlMjBUaGF0J3MlMjBub3QlMjBhJTIwYnJpZWYuJTIwVGhhdCdzJTIwYSUyMHBlcm1pc3Npb24lMjBzbGlwJTIwdG8lMjBtYWtlJTIwbm9pc2UlMjB3aXRob3V0JTIwbWFraW5nJTIwbWVhbmluZy4lNUNuJTVDblRoZSUyMGJyaWVmcyUyMHdvcnRoJTIwdGFraW5nJTIwc2VyaW91c2x5JTIwdXN1YWxseSUyMGFycml2ZSUyMHdpdGglMjBhJTIwcXVlc3Rpb24lMjB0aGUlMjBjbGllbnQlMjBjYW4ndCUyMGFuc3dlciUyMHRoZW1zZWx2ZXMlMjAlRTIlODAlOTQlMjBzb21ldGhpbmclMjBsaWtlJTIwJTVDJTIyd2UlMjBrbm93JTIwd2hhdCUyMHdlJTIwZG8lMkMlMjBidXQlMjB3ZSUyMGRvbid0JTIwa25vdyUyMHdoYXQlMjB3ZSUyMGFyZS4lNUMlMjIlMjBUaGF0J3MlMjBob25lc3QuJTIwVGhhdCdzJTIwdXNlZnVsLiU1Q24lNUNuVGhlJTIwYmVzdCUyMGJyYW5kJTIwd29yayUyMHN0YXJ0cyUyMHRoZXJlLiUyME5vdCUyMHdpdGglMjBhZXN0aGV0aWMlMjBkZWNpc2lvbnMlMkMlMjBidXQlMjB3aXRoJTIwdGhlJTIwaGFyZGVyJTIwcXVlc3Rpb24lMjBvZiUyMHdoYXQlMjB0aGlzJTIwdGhpbmclMjBpcyUyMGFjdHVhbGx5JTIwYWJvdXQlMjBhbmQlMjB3aG8lMjBpdCdzJTIwZ2VudWluZWx5JTIwZm9yLiUyMEV2ZXJ5dGhpbmclMjBkb3duc3RyZWFtJTIwJUUyJTgwJTk0JTIwdGhlJTIwdmlzdWFscyUyQyUyMHRoZSUyMGxhbmd1YWdlJTJDJTIwdGhlJTIwZmVlbCUyMCVFMiU4MCU5NCUyMGZsb3dzJTIwZnJvbSUyMGhvdyUyMGNsZWFybHklMjB5b3UlMjBjYW4lMjBhbnN3ZXIlMjB0aGF0LiU1Q24lNUNuJTVDJTIyTWFrZSUyMGl0JTIwcG9wJTVDJTIyJTIwaXMlMjB3aGF0JTIweW91JTIwaGVhciUyMHdoZW4lMjBzdHJhdGVneSUyMHdhcyUyMHNraXBwZWQuJTIwWW91JTIwY2FuJTIwcG9wJTIweW91ciUyMHdheSUyMGludG8lMjBhdHRlbnRpb24lMjBhbmQlMjBzdGlsbCUyMG1lYW4lMjBub3RoaW5nJTIwdG8lMjBhbnlvbmUuJTIyJTJDJTIyTW9zdCUyMGlkZW50aXR5JTIwcHJvamVjdHMlMjBmYWlsJTIwYmVmb3JlJTIwYSUyMHNpbmdsZSUyMHNrZXRjaCUyMGdldHMlMjBtYWRlLiU1Q24lNUNuTm90JTIwYmVjYXVzZSUyMHRoZSUyMGRlc2lnbmVyJTIwaXNuJ3QlMjBza2lsbGVkLiUyME5vdCUyMGJlY2F1c2UlMjB0aGUlMjBidWRnZXQlMjBpcyUyMHdyb25nLiUyMEJlY2F1c2UlMjB0aGUlMjBjbGllbnQlMjBhbmQlMjB0aGUlMjBkZXNpZ25lciUyMG5ldmVyJTIwYWdyZWVkJTIwb24lMjB3aGF0JTIwcHJvYmxlbSUyMHRoZXklMjB3ZXJlJTIwYWN0dWFsbHklMjBzb2x2aW5nLiU1Q24lNUNuVGhlJTIwZGVzaWduZXIlMjB0aGlua3MlMjB0aGUlMjBwcm9ibGVtJTIwaXMlMjB2aXN1YWwuJTIwVGhlJTIwY2xpZW50JTIwdGhpbmtzJTIwdGhlJTIwcHJvYmxlbSUyMGlzJTIwdmlzdWFsLiUyMEJ1dCUyMHVuZGVybmVhdGglMkMlMjB0aGUlMjByZWFsJTIwaXNzdWUlMjBpcyUyMHVzdWFsbHklMjBhYm91dCUyMHBvc2l0aW9uaW5nJTJDJTIwb3IlMjBhJTIwbWFya2V0JTIwdGhleSdyZSUyMHRyeWluZyUyMHRvJTIwZW50ZXIlMkMlMjBvciUyMGElMjBwZXJjZXB0aW9uJTIwdGhleSdyZSUyMHRyeWluZyUyMHRvJTIwc2hpZnQuJTVDbiU1Q25Zb3UlMjBjYW4lMjBkZXNpZ24lMjBhJTIwYmVhdXRpZnVsJTIwc3lzdGVtJTIwb24lMjB0b3AlMjBvZiUyMGFuJTIwdW5yZXNvbHZlZCUyMHN0cmF0ZWdpYyUyMHF1ZXN0aW9uJTIwYW5kJTIwaXQlMjB3aWxsJTIwbG9vayUyMGdvb2QlMjBmb3IlMjBhYm91dCUyMHNpeCUyMG1vbnRocyUyMGJlZm9yZSUyMGV2ZXJ5b25lJTIwc3RhcnRzJTIwYXNraW5nJTIwd2h5JTIwaXQlMjBpc24ndCUyMCU1QyUyMndvcmtpbmcuJTVDJTIyJTVDbiU1Q25UaGUlMjB3b3JrJTIwdGhhdCUyMGFjdHVhbGx5JTIwaG9sZHMlMjB1cCUyMGlzJTIwYnVpbHQlMjBvbiUyMGElMjBmb3VuZGF0aW9uJTIwdGhlJTIwY2xpZW50JTIwdW5kZXJzdGFuZHMlMjBhbmQlMjBiZWxpZXZlcy4lMjBUaGF0JTIwdGFrZXMlMjBsb25nZXIlMjB0byUyMGdldCUyMHRvLiUyMEl0J3MlMjBhbHNvJTIwdGhlJTIwb25seSUyMHRoaW5nJTIwd29ydGglMjBidWlsZGluZyUyMG9uLiUyMiUyQyUyMkNoaW4lMjBjaGluJTIwaGFzJTIwYmVlbiUyMG9uJTIwdGFibGVzJTIwYXQlMjBXZXN0JTIwQWZyaWNhbiUyMGNlbGVicmF0aW9ucyUyMG15JTIwZW50aXJlJTIwbGlmZS4lMjBXZWRkaW5ncyUyQyUyMGhvbGlkYXlzJTJDJTIwZmFtaWx5JTIwZ2F0aGVyaW5ncyUyMCVFMiU4MCU5NCUyMGElMjBib3dsJTIwc2hvd3MlMjB1cCUyMGFuZCUyMGRpc2FwcGVhcnMlMjBiZWZvcmUlMjBtb3N0JTIwcGVvcGxlJTIwZXZlbiUyMG5vdGljZSUyMGl0JTIwd2FzJTIwdGhlcmUuJTVDbiU1Q25UaGUlMjBzdHJhbmdlJTIwdGhpbmclMjBpcyUyMGhvdyUyMHJhcmVseSUyMHRoYXQlMjBjdWx0dXJhbCUyMHByZXNlbmNlJTIwdHJhbnNsYXRlcyUyMGludG8lMjBzZXJpb3VzJTIwYnJhbmQlMjBhdHRlbnRpb24uJTIwVGhlJTIwcHJvZHVjdCUyMGV4aXN0cyUyMGV2ZXJ5d2hlcmUlMjBhbmQlMjB0aGUlMjBjYXRlZ29yeSUyMGJhcmVseSUyMGV4aXN0cyUyMGluJTIwdGVybXMlMjBvZiUyMGhvdyUyMGl0J3MlMjBwb3NpdGlvbmVkJTJDJTIwcGFja2FnZWQlMkMlMjBvciUyMHRhbGtlZCUyMGFib3V0LiU1Q24lNUNuVGhhdCdzJTIwZXhhY3RseSUyMHRoZSUyMGdhcCUyME1pa2V5J3MlMjBHb3VybWV0JTIwQ2hpbiUyMENoaW4lMjBpcyUyMGJ1aWx0JTIwdG8lMjBmaWxsLiU1Q24lNUNuVGhpcyUyMGlzbid0JTIwYWJvdXQlMjBmYW5jeSUyMHBhY2thZ2luZyUyMGZvciUyMHRoZSUyMHNha2UlMjBvZiUyMGl0LiUyMEl0J3MlMjBhYm91dCUyMHB1dHRpbmclMjBhJTIwcHJvZHVjdCUyMHRoYXQlMjBoYXMlMjBhbHdheXMlMjBiZWVuJTIwd29ydGglMjBjZWxlYnJhdGluZyUyMG9udG8lMjBhJTIwc3RhZ2UlMjB0aGF0JTIwbWF0Y2hlcyUyMHdoYXQlMjBpdCUyMGFjdHVhbGx5JTIwaXMlMjAlRTIlODAlOTQlMjBzb21ldGhpbmclMjBtYWRlJTIwd2l0aCUyMHJlYWwlMjBjcmFmdCUyQyUyMHJvb3RlZCUyMGluJTIwYSUyMHJlYWwlMjBjdWxpbmFyeSUyMHRyYWRpdGlvbiUyQyUyMGFuZCUyMHdvcnRoeSUyMG9mJTIwdGhlJTIwc2FtZSUyMGF0dGVudGlvbiUyMGFueSUyMHByZW1pdW0lMjBmb29kJTIwYnJhbmQlMjBnZXRzLiU1Q24lNUNuVGhlJTIwcXVhbGl0eSUyMGlzJTIwYWxyZWFkeSUyMHRoZXJlLiUyMFdlJ3JlJTIwanVzdCUyMG1ha2luZyUyMHN1cmUlMjB0aGUlMjB3b3JsZCUyMGNhbiUyMHNlZSUyMGl0LiU1Q24lNUNuJTVCQWRkJTIwYXZhaWxhYmlsaXR5JTIwdXBkYXRlJTIwb3IlMjBzdG9ja2lzdCUyMGluZm8lMjBpZiUyMGFwcGxpY2FibGUlNUQlMjIlNUQlN0Q=
+W&P posts:     index.html?load=JTdCJTIycGFnZSUyMiUzQSUyMndwJTIyJTJDJTIyd2VlayUyMiUzQSUyMjIwMjYtVzIwJTIyJTJDJTIycG9zdHMlMjIlM0ElNUIlMjJUaGUlMjB3YXZlJTIwb2YlMjBhcmVuYSUyMG5hbWluZyUyMHJpZ2h0cyUyMGRlYWxzJTIwb3ZlciUyMHRoZSUyMHBhc3QlMjBmZXclMjB5ZWFycyUyMGhhcyUyMGNyZWF0ZWQlMjBhJTIwcXVpZXQlMjBwcm9ibGVtJTIwZm9yJTIwc3BvcnRzJTIwYnJhbmRzJTNBJTIwdGhlJTIwdmVudWUlMjBuYW1lJTIwY2hhbmdlcyUyQyUyMGJ1dCUyMHRoZSUyMGJyYW5kJTIwaWRlbnRpdHklMjBuZXZlciUyMGNhdGNoZXMlMjB1cC4lNUNuJTVDbllvdSUyMGVuZCUyMHVwJTIwd2l0aCUyMHRlYW1zJTIwcGxheWluZyUyMGluJTIwYSUyMGJ1aWxkaW5nJTIwd2l0aCUyMG9uZSUyMG5hbWUlMkMlMjBhJTIwc2Vjb25kYXJ5JTIwbG9nbyUyMHJlZmVyZW5jaW5nJTIwYSUyMGRpZmZlcmVudCUyMGVyYSUyQyUyMGFuZCUyMGElMjB1bmlmb3JtJTIwc2V0JTIwZGVzaWduZWQlMjBieSUyMGNvbW1pdHRlZSUyMHllYXJzJTIwYWdvLiUyME5vbmUlMjBvZiUyMGl0JTIwdGFsa3MlMjB0byUyMGVhY2glMjBvdGhlci4lNUNuJTVDbk5hbWluZyUyMHJpZ2h0cyUyMGRlYWxzJTIwYXJlJTIwYnVzaW5lc3MlMjBkZWNpc2lvbnMlMjAlRTIlODAlOTQlMjB1bmRlcnN0b29kLiUyMEJ1dCUyMHRoZSUyMGJlc3QlMjBvcmdhbml6YXRpb25zJTIwdHJlYXQlMjBhJTIwbmV3JTIwdmVudWUlMjBuYW1lJTIwYXMlMjBhJTIwYnJhbmQlMjBtb21lbnQuJTIwQSUyMHJlYXNvbiUyMHRvJTIwYXVkaXQlMjB0aGUlMjBmdWxsJTIwdmlzdWFsJTIwc3lzdGVtJTJDJTIwdGlnaHRlbiUyMHRoZSUyMGhpZXJhcmNoeSUyQyUyMGFuZCUyMGFzayUyMHdoZXRoZXIlMjBldmVyeXRoaW5nJTIwc3RpbGwlMjBtYWtlcyUyMHNlbnNlJTIwdG9nZXRoZXIuJTVDbiU1Q25UaGUlMjB0ZWFtcyUyMHRoYXQlMjBnZXQlMjB0aGlzJTIwcmlnaHQlMjB1c2UlMjB0aGUlMjBkZWFsJTIwYXMlMjBhJTIwZm9yY2luZyUyMGZ1bmN0aW9uLiUyMFRoZSUyMG9uZXMlMjB0aGF0JTIwZG9uJ3QlMjBhZGQlMjBhbm90aGVyJTIwbGF5ZXIlMjBvZiUyMG1pc21hdGNoZWQlMjBpZGVudGl0eSUyMG9uJTIwdG9wJTIwb2YlMjB0aGUlMjBwaWxlLiU1Q24lNUNuRmFucyUyMG5vdGljZS4lMjBUaGV5JTIwbWlnaHQlMjBub3QlMjBzYXklMjAlNUMlMjJ5b3VyJTIwdmlzdWFsJTIwc3lzdGVtJTIwbGFja3MlMjBjb2hlcmVuY2UlNUMlMjIlMjBidXQlMjB0aGV5JTIwZmVlbCUyMGl0JTIwd2hlbiUyMHNvbWV0aGluZyUyMGlzJTIwb2ZmLiUyMiUyQyUyMkRpZ2l0YWwtZmlyc3QlMjB0aGlua2luZyUyMGhhcyUyMHF1aWV0bHklMjBtYWRlJTIwYSUyMGxvdCUyMG9mJTIwc3BvcnRzJTIwYnJhbmRzJTIwd2Vha2VyLiU1Q24lNUNuV2hlbiUyMHlvdSUyMGRlc2lnbiUyMHByaW1hcmlseSUyMGZvciUyMHNjcmVlbnMlMjAlRTIlODAlOTQlMjBvcHRpbWl6ZWQlMjBmb3IlMjBhJTIwZ3JpZCUyMHBvc3QlMkMlMjBhJTIwbW9iaWxlJTIwYXBwJTJDJTIwYSUyMGRpZ2l0YWwlMjBib2FyZCUyMCVFMiU4MCU5NCUyMHlvdSUyMGNhbiUyMHByb2R1Y2UlMjBzb21ldGhpbmclMjB0aGF0JTIwbG9va3MlMjBjbGVhbiUyMGFuZCUyMGNvbnRlbXBvcmFyeS4lMjBXaGF0JTIweW91JTIwc29tZXRpbWVzJTIwbG9zZSUyMGlzJTIwd2VpZ2h0LiUyMFBoeXNpY2FsJTIwcHJlc2VuY2UuJTIwVGhlJTIwdGhpbmclMjB0aGF0JTIwcmVhZHMlMjBmcm9tJTIwMzAwJTIwZmVldCUyMGF3YXklMjBpbiUyMGElMjBzdGFkaXVtJTIwd2hlbiUyMHRoZSUyMGxpZ2h0cyUyMGFyZSUyMGxvdyUyMGFuZCUyMDIwJTJDMDAwJTIwcGVvcGxlJTIwYXJlJTIwbW92aW5nLiU1Q24lNUNuTGl2ZSUyMGVudmlyb25tZW50cyUyMGFyZSUyMHVuZm9yZ2l2aW5nJTIwaW4lMjBhJTIwc3BlY2lmaWMlMjB3YXkuJTIwVGhlJTIwbG9nbyUyMG9uJTIwYSUyMGplcnNleSUyMG5lZWRzJTIwdG8lMjBob2xkJTIwdXAlMjBhdCUyMGZ1bGwlMjBzaXplJTIwYW5kJTIwYXQlMjB0aHVtYm5haWwuJTIwVGhlJTIwY29sb3J3YXklMjBuZWVkcyUyMHRvJTIwaGl0JTIwdW5kZXIlMjBhcmVuYSUyMGxpZ2h0aW5nJTJDJTIwbm90JTIwanVzdCUyMGlkZWFsJTIwbW9uaXRvciUyMGNvbmRpdGlvbnMuJTIwVGhlJTIwdHlwZSUyMG5lZWRzJTIwdG8lMjBiZSUyMHJlYWRhYmxlJTIwb24lMjBhJTIwZmxhZyUyMHNvbWVvbmUncyUyMHdhdmluZyUyMGluJTIwc2VjdGlvbiUyMDExMi4lNUNuJTVDblRoZSUyMGJlc3QlMjBzcG9ydHMlMjBpZGVudGl0aWVzJTIwd2VyZSUyMGJ1aWx0JTIwd2l0aCUyMHRoYXQlMjBzY2FsZSUyMGluJTIwbWluZCUyMGZyb20lMjB0aGUlMjBiZWdpbm5pbmcuJTIwTm90JTIwYWRhcHRlZCUyMGZvciUyMGl0JTIwbGF0ZXIlMjAlRTIlODAlOTQlMjBidWlsdCUyMGZvciUyMGl0LiU1Q24lNUNuRGlnaXRhbCUyMGlzJTIwd2hlcmUlMjBtb3N0JTIwcGVvcGxlJTIwd2lsbCUyMHNlZSUyMHRoZSUyMGJyYW5kLiUyMExpdmUlMjBpcyUyMHdoZXJlJTIwdGhleSdsbCUyMGZlZWwlMjBpdC4lMjBUaG9zZSUyMGFyZSUyMGRpZmZlcmVudCUyMHByb2JsZW1zJTIwYW5kJTIwdGhleSUyMG5lZWQlMjB0byUyMGJlJTIwc29sdmVkJTIwdG9nZXRoZXIuJTIyJTJDJTIyVGhlJTIwc3BvcnRzJTIwYW5kJTIwZW50ZXJ0YWlubWVudCUyMGJyYW5kcyUyMHRoYXQlMjBsYXN0JTIwc2hhcmUlMjBvbmUlMjB0aGluZyUzQSUyMHRoZXklMjBrbm93JTIwd2hhdCUyMHRoZXklMjBzdGFuZCUyMGZvciUyMHdoZW4lMjBpdCdzJTIwbm90JTIwZ2FtZSUyMGRheS4lNUNuJTVDbkFueW9uZSUyMGNhbiUyMGJ1aWxkJTIwYnJhbmQlMjBlbmVyZ3klMjBhcm91bmQlMjBhJTIwd2luJTIwc3RyZWFrLiUyMFdpbm5pbmclMjBpcyUyMGVhc3klMjB0byUyMGRlc2lnbiUyMGZvci4lMjBUaGUlMjB0ZXN0JTIwaXMlMjB3aGF0JTIwdGhlJTIwYnJhbmQlMjBkb2VzJTIwd2hlbiUyMHRoZSUyMHRlYW0lMjBpcyUyMHJlYnVpbGRpbmclMkMlMjB0aGUlMjB2ZW51ZSUyMGlzJTIwcXVpZXQlMkMlMjBhbmQlMjB0aGVyZSdzJTIwbm8lMjBjdWx0dXJhbCUyMG1vbWVudCUyMHRvJTIwcmlkZS4lNUNuJTVDblRoZSUyMGJyYW5kcyUyMHRoYXQlMjBob2xkJTIwdXAlMjB0aHJvdWdoJTIwdGhhdCUyMCVFMiU4MCU5NCUyMHRoZSUyMG9uZXMlMjB0aGF0JTIwa2VlcCUyMGZhbnMlMjBjb25uZWN0ZWQlMjBkdXJpbmclMjB0aGUlMjBsb3clMjBwZXJpb2RzJTIwJUUyJTgwJTk0JTIwaGF2ZSUyMGJ1aWx0JTIwc29tZXRoaW5nJTIwYmV5b25kJTIwdGhlJTIwcmVzdWx0cy4lMjBBJTIwdmlzdWFsJTIwbGFuZ3VhZ2UlMjB0aGF0JTIwbWVhbnMlMjBzb21ldGhpbmcuJTIwQSUyMHZvaWNlJTIwdGhhdCdzJTIwY29uc2lzdGVudC4lMjBBJTIwc2Vuc2UlMjBvZiUyMGJlbG9uZ2luZyUyMHRoYXQlMjBkb2Vzbid0JTIwZGVwZW5kJTIwb24lMjB0aGUlMjBzY29yZWJvYXJkLiU1Q24lNUNuVGhhdCdzJTIwbm90JTIwc3RyaWN0bHklMjBhJTIwZGVzaWduJTIwcHJvYmxlbS4lMjBJdCdzJTIwYSUyMGNsYXJpdHklMjBwcm9ibGVtLiUyMERvJTIwdGhlJTIwcGVvcGxlJTIwcnVubmluZyUyMHRoZSUyMGJyYW5kJTIwYWN0dWFsbHklMjBrbm93JTIwd2hhdCUyMGl0JTIwbWVhbnMlMjB0byUyMGJlJTIwcGFydCUyMG9mJTIwdGhpcyUyMGNvbW11bml0eSUyMGJleW9uZCUyMHdpbnMlMjBhbmQlMjBsb3NzZXMlM0YlNUNuJTVDbkRlc2lnbiUyMGNhbid0JTIwYW5zd2VyJTIwdGhhdCUyMHF1ZXN0aW9uLiUyMEJ1dCUyMG9uY2UlMjB5b3UndmUlMjBhbnN3ZXJlZCUyMGl0JTJDJTIwdGhlJTIwZGVzaWduJTIwY2FuJTIwY2FycnklMjBpdCUyMGElMjBsb25nJTIwd2F5LiUyMiU1RCU3RA==

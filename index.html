@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="The Dispatch">
+  <meta name="theme-color" content="#ffffff">
+  <title>The Dispatch</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box; margin: 0; padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    :root {
+      --bg:       #FFFFFF;
+      --surface:  #F7F7F7;
+      --card:     #FFFFFF;
+      --border:   #E8E8E8;
+      --text:     #111111;
+      --sub:      #888888;
+      --muted:    #BBBBBB;
+      --amber:    #C9963A;
+      --blue:     #2B55CC;
+      --green:    #2E9E6B;
+      --red:      #C94040;
+      --r:        14px;
+      --r-sm:     10px;
+      --safe-t:   env(safe-area-inset-top,    0px);
+      --safe-b:   env(safe-area-inset-bottom, 0px);
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      padding-top: var(--safe-t);
+    }
+
+    /* ── TOPBAR ─────────────────────── */
+    .topbar {
+      padding: 20px 24px 0;
+    }
+    .topbar-eyebrow {
+      font-size: 13px;
+      color: var(--sub);
+      margin-bottom: 4px;
+    }
+    .topbar-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    /* ── SCROLL BODY ────────────────── */
+    .scroll-body {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: calc(80px + var(--safe-b));
+    }
+
+    /* ── PAGES ──────────────────────── */
+    .page { display: none; padding: 20px 24px 0; }
+    .page.active { display: block; }
+
+    /* ── BOTTOM TAB BAR ─────────────── */
+    .tabbar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: calc(64px + var(--safe-b));
+      padding-bottom: var(--safe-b);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid var(--border);
+      display: flex;
+      z-index: 100;
+    }
+    .tab-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      touch-action: manipulation;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .tab-icon {
+      font-size: 20px;
+      line-height: 1;
+      transition: transform 0.15s;
+    }
+    .tab-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.01em;
+      transition: color 0.15s;
+    }
+    .tab-item.active .tab-label { color: var(--text); font-weight: 600; }
+    .tab-item:active .tab-icon { transform: scale(0.88); }
+
+    /* ── DASHBOARD ──────────────────── */
+    .dash-section { padding: 28px 24px 0; }
+
+    /* Dot visualization */
+    .dot-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 32px 0 24px;
+    }
+    #dotCanvas { display: block; }
+
+    .progress-block { text-align: left; padding: 0 24px; }
+    .progress-pct {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 64px;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+    }
+    .progress-label {
+      font-size: 13px;
+      color: var(--sub);
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .progress-label::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 4px;
+      background: var(--muted);
+      border-radius: 50%;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 24px 24px 0;
+    }
+    .info-card-full {
+      grid-column: 1 / -1;
+    }
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 16px;
+    }
+    .info-card-label {
+      font-size: 12px;
+      color: var(--sub);
+      margin-bottom: 8px;
+    }
+    .info-card-value {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .info-card-sub {
+      font-size: 13px;
+      color: var(--sub);
+      margin-top: 4px;
+    }
+
+    /* mini post bars on dashboard */
+    .post-bars { margin-top: 20px; }
+    .bar-row {
+      display: flex; align-items: center;
+      gap: 10px; padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .bar-row:last-child { border-bottom: none; }
+    .bar-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .bar-michael { background: var(--amber); }
+    .bar-wp      { background: var(--blue); }
+    .bar-info { flex: 1; min-width: 0; }
+    .bar-label { font-size: 13px; font-weight: 500; color: var(--text); }
+    .bar-day   { font-size: 11px; color: var(--sub); margin-top: 1px; }
+    .bar-status {
+      font-size: 11px; font-weight: 600;
+      padding: 3px 8px; border-radius: 20px;
+    }
+    .status-done { background: #EDFAF4; color: var(--green); }
+    .status-pending { background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
+    .status-missed { background: #FFF0F0; color: var(--red); border: 1px solid #EEC4C4; }
+
+    /* ── POST PAGES ─────────────────── */
+    .posts-header {
+      padding: 28px 0 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    .posts-header-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 24px; font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+    .posts-header-sub { font-size: 13px; color: var(--sub); margin-top: 3px; }
+
+    .post-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      margin-bottom: 14px;
+      transition: opacity 0.25s;
+    }
+    .post-card.posted { opacity: 0.38; }
+
+    .post-card-top {
+      padding: 14px 16px 12px;
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-card-meta { display: flex; flex-direction: column; gap: 3px; }
+    .post-num-row { display: flex; align-items: center; gap: 8px; }
+    .post-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+      padding: 2px 8px; border-radius: 4px;
+    }
+    .badge-michael { background: #FDF3E0; color: var(--amber); }
+    .badge-wp      { background: #EBF0FF; color: var(--blue); }
+    .post-day   { font-size: 12px; color: var(--sub); }
+    .post-pillar { font-size: 11px; color: var(--muted); }
+
+    .post-card-btns { display: flex; gap: 6px; flex-shrink: 0; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 7px 13px; border-radius: var(--r-sm);
+      font-size: 12px; font-weight: 600; cursor: pointer;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--sub); transition: all 0.12s;
+      touch-action: manipulation;
+      -webkit-user-select: none; user-select: none;
+      white-space: nowrap;
+    }
+    .btn:active { transform: scale(0.93); }
+    .btn-copy-m { color: var(--amber); border-color: #E8D4A8; background: #FDF9F2; }
+    .btn-copy-w { color: var(--blue);  border-color: #B8C8EE; background: #F2F5FD; }
+    .btn-check  { color: var(--muted); }
+    .btn-check.done { color: var(--green); border-color: #A8DEC4; background: #F2FBF6; }
+
+    .post-textarea {
+      width: 100%; min-height: 148px;
+      background: transparent; border: none;
+      color: var(--text); font-family: inherit; font-size: 15px;
+      line-height: 1.7; padding: 14px 16px;
+      resize: vertical; outline: none;
+    }
+    .post-textarea::placeholder { color: var(--muted); }
+
+    .post-char {
+      padding: 4px 16px 12px;
+      font-size: 11px; color: var(--muted); text-align: right;
+    }
+
+    /* ── SETTINGS ───────────────────── */
+    .settings-section { padding: 28px 0; }
+    .settings-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 24px; font-weight: 400;
+      letter-spacing: -0.02em; margin-bottom: 24px;
+    }
+
+    .field { margin-bottom: 20px; }
+    .field-label {
+      display: block;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.07em; color: var(--sub);
+      margin-bottom: 8px; text-transform: uppercase;
+    }
+    .field-input {
+      width: 100%;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r-sm); color: var(--text);
+      font-family: inherit; font-size: 15px;
+      padding: 12px 14px; outline: none;
+      transition: border-color 0.15s;
+      -webkit-appearance: none; appearance: none;
+    }
+    .field-input:focus { border-color: var(--text); }
+    .field-hint {
+      font-size: 12px; color: var(--sub);
+      margin-top: 7px; line-height: 1.6;
+    }
+    .field-hint a { color: var(--text); }
+
+    .action-btn {
+      width: 100%; padding: 14px;
+      border-radius: var(--r-sm);
+      font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: all 0.15s;
+      touch-action: manipulation;
+      -webkit-user-select: none; user-select: none;
+      letter-spacing: -0.01em;
+    }
+    .action-btn:active { transform: scale(0.98); }
+    .action-primary {
+      background: var(--text); color: var(--bg);
+      border: none; margin-bottom: 10px;
+    }
+    .action-ghost {
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--border); margin-bottom: 10px;
+    }
+    .action-danger {
+      background: transparent; color: var(--red);
+      border: 1px solid #EEC4C4;
+    }
+
+    .settings-divider {
+      border: none; border-top: 1px solid var(--border);
+      margin: 24px 0;
+    }
+
+    .sched-block { margin-bottom: 12px; }
+    .sched-row {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .sched-row:first-child { border-top: 1px solid var(--border); }
+    .sched-day { font-size: 14px; font-weight: 500; }
+    .sched-page { font-size: 12px; color: var(--sub); margin-top: 2px; }
+    .sched-notify-btn {
+      font-size: 12px; font-weight: 600;
+      padding: 7px 14px; border-radius: 20px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--sub); cursor: pointer;
+      touch-action: manipulation;
+      transition: all 0.15s; flex-shrink: 0;
+    }
+    .sched-notify-btn.sent { color: var(--green); border-color: #A8DEC4; background: #F2FBF6; }
+
+    /* share link box */
+    .share-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r-sm); padding: 14px;
+      font-size: 12px; color: var(--sub);
+      font-family: 'SF Mono', Menlo, monospace;
+      word-break: break-all; line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    /* ── TOAST ──────────────────────── */
+    #toast {
+      position: fixed; bottom: calc(80px + var(--safe-b) + 12px);
+      left: 50%; transform: translateX(-50%) translateY(10px);
+      background: var(--text); color: var(--bg);
+      font-size: 13px; font-weight: 500;
+      padding: 10px 20px; border-radius: 30px;
+      opacity: 0; transition: all 0.2s;
+      pointer-events: none; z-index: 999;
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ── RESPONSIVE ─────────────────── */
+    @media (min-width: 500px) {
+      .topbar, .dash-section { padding-left: 32px; padding-right: 32px; }
+      .progress-block { padding: 0 32px; }
+      .info-grid { padding: 24px 32px 0; }
+      .page { padding: 0 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR (dynamic) -->
+<div class="topbar" id="topbar">
+  <div class="topbar-eyebrow" id="topEyebrow">Week of <span id="weekRange"></span></div>
+  <div class="topbar-title" id="topTitle">The Dispatch</div>
+</div>
+
+<!-- SCROLL BODY -->
+<div class="scroll-body">
+
+  <!-- ── DASHBOARD ── -->
+  <div class="page active" id="page-dashboard">
+    <div class="dot-wrap">
+      <canvas id="dotCanvas" width="220" height="220"></canvas>
+    </div>
+    <div class="progress-block">
+      <div class="progress-pct" id="pctText">0%</div>
+      <div class="progress-label" id="pctLabel">of posts complete this week</div>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-label">Current week</div>
+        <div class="info-card-value" id="weekNum">—</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Posts remaining</div>
+        <div class="info-card-value" id="postsLeft">6</div>
+      </div>
+      <div class="info-card info-card-full">
+        <div class="info-card-label">Next posting day</div>
+        <div class="info-card-value" id="nextDay">Monday</div>
+        <div class="info-card-sub" id="nextPage">Michael Lawanson — Strategy &amp; Design</div>
+      </div>
+    </div>
+    <!-- Post status list -->
+    <div style="padding: 20px 24px 0;" id="barList"></div>
+  </div>
+
+  <!-- ── MICHAEL ── -->
+  <div class="page" id="page-michael">
+    <div id="michael-cards"></div>
+    <div style="display:flex;gap:10px;justify-content:flex-end;padding-bottom:24px">
+      <button class="btn" style="touch-action:manipulation" onclick="openShare('michael')">↑ Share</button>
+      <button class="btn" style="touch-action:manipulation" onclick="clearWeek('michael')">Clear</button>
+    </div>
+  </div>
+
+  <!-- ── WOLF & PIGEONS ── -->
+  <div class="page" id="page-wp">
+    <div id="wp-cards"></div>
+    <div style="display:flex;gap:10px;justify-content:flex-end;padding-bottom:24px">
+      <button class="btn" style="touch-action:manipulation" onclick="openShare('wp')">↑ Share</button>
+      <button class="btn" style="touch-action:manipulation" onclick="clearWeek('wp')">Clear</button>
+    </div>
+  </div>
+
+  <!-- ── SETTINGS ── -->
+  <div class="page" id="page-settings">
+    <div class="settings-section">
+      <div class="settings-title">Settings</div>
+
+      <div class="field">
+        <label class="field-label">Ntfy Channel Name</label>
+        <input type="text" class="field-input" id="channelInput"
+               placeholder="e.g. dispatch-lawanson-wp"
+               autocorrect="off" autocapitalize="none" spellcheck="false"/>
+        <div class="field-hint">
+          Download <a href="https://ntfy.sh" target="_blank">ntfy.sh</a> free on iPhone → tap + → subscribe to your channel name. Enter the same name above.
+        </div>
+      </div>
+      <button class="action-btn action-primary" onclick="saveChannel()">Save Channel</button>
+      <button class="action-btn action-ghost"   onclick="sendTestNotif()">Send Test Notification</button>
+
+      <hr class="settings-divider">
+
+      <label class="field-label">Posting Schedule — Remind Me</label>
+      <div class="sched-block">
+        <div class="sched-row">
+          <div>
+            <div class="sched-day">Monday · 8 AM</div>
+            <div class="sched-page">Michael Lawanson — Strategy &amp; Design</div>
+          </div>
+          <button class="sched-notify-btn" id="n-mon"
+                  onclick="sendReminder('Monday','Michael Lawanson — Strategy &amp; Design post','n-mon')">
+            Notify
+          </button>
+        </div>
+        <div class="sched-row">
+          <div>
+            <div class="sched-day">Wednesday · 12 PM</div>
+            <div class="sched-page">Wolf &amp; Pigeons — Industry Take</div>
+          </div>
+          <button class="sched-notify-btn" id="n-wed"
+                  onclick="sendReminder('Wednesday','Wolf & Pigeons — Industry Take post','n-wed')">
+            Notify
+          </button>
+        </div>
+        <div class="sched-row">
+          <div>
+            <div class="sched-day">Friday · 9 AM</div>
+            <div class="sched-page">Alternating — check your schedule</div>
+          </div>
+          <button class="sched-notify-btn" id="n-fri"
+                  onclick="sendReminder('Friday','Time for your Friday LinkedIn post','n-fri')">
+            Notify
+          </button>
+        </div>
+      </div>
+
+      <hr class="settings-divider">
+
+      <label class="field-label">Share This Week's Posts</label>
+      <div id="shareSection">
+        <button class="action-btn action-ghost" onclick="buildShareLinks()">Generate Share Links</button>
+      </div>
+
+      <hr class="settings-divider">
+
+      <label class="field-label">Danger Zone</label>
+      <button class="action-btn action-danger" onclick="clearAll()">Clear All Posts This Week</button>
+    </div>
+  </div>
+
+</div><!-- /scroll-body -->
+
+<!-- BOTTOM TAB BAR -->
+<nav class="tabbar">
+  <button class="tab-item active" id="tb-dashboard" onclick="goTab('dashboard')">
+    <div class="tab-icon">⁙</div>
+    <div class="tab-label">Dashboard</div>
+  </button>
+  <button class="tab-item" id="tb-michael" onclick="goTab('michael')">
+    <div class="tab-icon">✦</div>
+    <div class="tab-label">Michael</div>
+  </button>
+  <button class="tab-item" id="tb-wp" onclick="goTab('wp')">
+    <div class="tab-icon">◈</div>
+    <div class="tab-label">Wolf &amp; Pigeons</div>
+  </button>
+  <button class="tab-item" id="tb-settings" onclick="goTab('settings')">
+    <div class="tab-icon">◎</div>
+    <div class="tab-label">Settings</div>
+  </button>
+</nav>
+
+<div id="toast"></div>
+
+<script>
+// ── DATA ──────────────────────────────────────────
+const SLOTS = {
+  michael: [
+    { label:'POST 1', day:'Monday · 8–9 AM',   pillar:'Strategy & Design' },
+    { label:'POST 2', day:'Wednesday · 12 PM',  pillar:'Strategy & Design' },
+    { label:'POST 3', day:'Friday · 9 AM',      pillar:"Mikey's Gourmet Chin Chin" },
+  ],
+  wp: [
+    { label:'POST 1', day:'Monday · 8–9 AM',   pillar:'Industry Reaction' },
+    { label:'POST 2', day:'Wednesday · 12 PM',  pillar:'Design Craft' },
+    { label:'POST 3', day:'Friday · 9 AM',      pillar:'Brand Philosophy' },
+  ],
+};
+
+// ── DEFAULT POSTS (auto-fill when cards are empty) ─
+const WEEK_POSTS = {
+  '2026-W20': {
+    michael: [
+      `There's a version of a brief that arrives with a logo, a color palette, and the instruction to "make it pop." That's not a brief. That's a permission slip to make noise without making meaning.
+
+The briefs worth taking seriously usually arrive with a question the client can't answer themselves — something like "we know what we do, but we don't know what we are." That's honest. That's useful.
+
+The best brand work starts there. Not with aesthetic decisions, but with the harder question of what this thing is actually about and who it's genuinely for. Everything downstream — the visuals, the language, the feel — flows from how clearly you can answer that.
+
+"Make it pop" is what you hear when strategy was skipped. You can pop your way into attention and still mean nothing to anyone.`,
+
+      `Most identity projects fail before a single sketch gets made.
+
+Not because the designer isn't skilled. Not because the budget is wrong. Because the client and the designer never agreed on what problem they were actually solving.
+
+The designer thinks the problem is visual. The client thinks the problem is visual. But underneath, the real issue is usually about positioning, or a market they're trying to enter, or a perception they're trying to shift.
+
+You can design a beautiful system on top of an unresolved strategic question and it will look good for about six months before everyone starts asking why it isn't "working."
+
+The work that actually holds up is built on a foundation the client understands and believes. That takes longer to get to. It's also the only thing worth building on.`,
+
+      `Chin chin has been on tables at West African celebrations my entire life. Weddings, holidays, family gatherings — a bowl shows up and disappears before most people even notice it was there.
+
+The strange thing is how rarely that cultural presence translates into serious brand attention. The product exists everywhere and the category barely exists in terms of how it's positioned, packaged, or talked about.
+
+That's exactly the gap Mikey's Gourmet Chin Chin is built to fill.
+
+This isn't about fancy packaging for the sake of it. It's about putting a product that has always been worth celebrating onto a stage that matches what it actually is — something made with real craft, rooted in a real culinary tradition, and worthy of the same attention any premium food brand gets.
+
+The quality is already there. We're just making sure the world can see it.`,
+    ],
+    wp: [
+      `The wave of arena naming rights deals over the past few years has created a quiet problem for sports brands: the venue name changes, but the brand identity never catches up.
+
+You end up with teams playing in a building with one name, a secondary logo referencing a different era, and a uniform set designed by committee years ago. None of it talks to each other.
+
+Naming rights deals are business decisions — understood. But the best organizations treat a new venue name as a brand moment. A reason to audit the full visual system, tighten the hierarchy, and ask whether everything still makes sense together.
+
+The teams that get this right use the deal as a forcing function. The ones that don't add another layer of mismatched identity on top of the pile.
+
+Fans notice. They might not say "your visual system lacks coherence" but they feel it when something is off.`,
+
+      `Digital-first thinking has quietly made a lot of sports brands weaker.
+
+When you design primarily for screens — optimized for a grid post, a mobile app, a digital board — you can produce something that looks clean and contemporary. What you sometimes lose is weight. Physical presence. The thing that reads from 300 feet away in a stadium when the lights are low and 20,000 people are moving.
+
+Live environments are unforgiving in a specific way. The logo on a jersey needs to hold up at full size and at thumbnail. The colorway needs to hit under arena lighting, not just ideal monitor conditions. The type needs to be readable on a flag someone's waving in section 112.
+
+The best sports identities were built with that scale in mind from the beginning. Not adapted for it later — built for it.
+
+Digital is where most people will see the brand. Live is where they'll feel it. Those are different problems and they need to be solved together.`,
+
+      `The sports and entertainment brands that last share one thing: they know what they stand for when it's not game day.
+
+Anyone can build brand energy around a win streak. Winning is easy to design for. The test is what the brand does when the team is rebuilding, the venue is quiet, and there's no cultural moment to ride.
+
+The brands that hold up through that — the ones that keep fans connected during the low periods — have built something beyond the results. A visual language that means something. A voice that's consistent. A sense of belonging that doesn't depend on the scoreboard.
+
+That's not strictly a design problem. It's a clarity problem. Do the people running the brand actually know what it means to be part of this community beyond wins and losses?
+
+Design can't answer that question. But once you've answered it, the design can carry it a long way.`,
+    ],
+  },
+  '2026-W21': {
+    michael: [
+      `The client who comes in asking for a rebrand usually doesn't need a rebrand.
+
+What they need is clarity on what they're actually trying to say. But clarity is harder to scope than a visual system, so they come in with a rebrand brief instead.
+
+This isn't a criticism — it's a pattern worth recognizing. When business feels stuck, the instinct is to look at the most visible surface of the brand. Change the logo. Update the palette. Commission new photography. It's concrete, it has a deliverable, and it creates the feeling of forward motion.
+
+What it usually doesn't do is fix the underlying issue, which is almost never about how the brand looks.
+
+The best work comes out of the conversations that happen before the brief is written — when you can still ask what problem the client is actually trying to solve, and whether changing the visual identity is genuinely the answer to that question.
+
+Sometimes it is. More often, the real work is upstream.`,
+
+      `"Finding your brand voice" is usually the wrong frame.
+
+It implies the voice is hidden somewhere, waiting to be discovered — that if you run enough workshops and do enough exercises, it will emerge fully formed.
+
+In practice, the brands with the clearest, most consistent voices didn't find them. They made decisions. Deliberate choices about what they would say and what they wouldn't, who they were talking to and who they weren't, what they cared about and what they were indifferent to.
+
+Voice is a set of decisions, not a discovery. And the brands that struggle with consistency usually aren't struggling with self-knowledge — they're struggling with commitment. The willingness to say no to the version of the brand that tries to appeal to everyone.
+
+Clarity comes from constraint. That's not a design principle, it's just true.`,
+
+      `Most food brands in the premium snack space are telling the same story: provenance, craft, clean ingredients, sustainable practices.
+
+The story matters. But when every brand in a category is telling the same version of it, the story stops differentiating anything.
+
+Mikey's Gourmet Chin Chin is telling a different story — not because we decided to be contrarian, but because the product actually has a different story to tell. A culinary tradition that predates most of the premium snack category. A flavor profile that doesn't exist anywhere else in that aisle. A cultural context that deserves to be presented, not erased.
+
+The opportunity isn't just to be a good snack brand. It's to introduce a category of one.
+
+That's the kind of positioning that holds up.`,
+    ],
+    wp: [
+      `The number of sports teams that have undergone visual rebrands in the last three years without addressing their merchandise strategy is striking.
+
+You can build a beautiful new identity system — tight hierarchy, strong primary mark, coherent secondary palette — and then watch it get diluted the moment it hits the licensed merchandise channel. Wrong colorways, off-model applications, supplier variations that were never part of the original system.
+
+The teams that protect their brand equity aren't just building better identities. They're building better governance around the identity. Clear usage documentation, approval processes that actually work, and the organizational will to say no to revenue that comes at the cost of consistency.
+
+That last part is where most teams fall short. Saying no to a licensing deal because the application quality isn't there requires a level of brand conviction that most organizations don't have at the executive level.
+
+The identity system is the starting point. What happens to it downstream is the real test.`,
+
+      `Color is the most underrated strategic decision in sports brand identity.
+
+It gets treated as an aesthetic choice — pick something bold, differentiate from the competition, make sure it reads on a black jersey. Those are real considerations. But they're the surface layer.
+
+The teams that have built real equity in their color — not just recognition, but meaning — are the ones that treated it as a commitment, not a starting point. They made it exclusive across the brand system. They protected it in their licensing agreements. They let it become the shorthand for the entire organization.
+
+There's a reason certain colors are worth more than others in sports. Not because they're better colors, but because someone decided to own them fully and never stopped.
+
+Color equity doesn't come from picking the right color. It comes from everything that happens after the pick.`,
+
+      `The question worth asking after any rebrand is: what's harder to copy now?
+
+Most visual refreshes make a brand look more current. That's worth something. But looking current is table stakes — every team can update their look every decade or so and get there.
+
+The identities that actually create competitive advantage are harder to define. They have a specificity that's tied to something real about the organization — a genuine history, a clear geographic character, a philosophy that shows up in the way the team is built and the way the brand is presented.
+
+Those things can be designed toward, but they can't be manufactured out of nothing. You need something true to work with.
+
+The best clients we've worked with knew what was true about their organization before they came in with a design brief. The work was about finding the right expression for something that already existed.
+
+That's the only kind of work that lasts.`,
+    ],
+  },
+};
+
+// ── STORAGE KEYS ──────────────────────────────────
+function weekId() {
+  const d = new Date(), j = new Date(d.getFullYear(),0,1);
+  const w = Math.ceil(((d-j)/864e5 + j.getDay()+1)/7);
+  return `${d.getFullYear()}-W${String(w).padStart(2,'0')}`;
+}
+function sk(page,i)  { return `dp_${weekId()}_${page}_${i}`; }
+function pk(page,i)  { return `dp_p_${weekId()}_${page}_${i}`; }
+
+// ── WEEK LABEL ─────────────────────────────────────
+function weekRange() {
+  const d=new Date(), day=d.getDay();
+  const diff = day===0?-6:1-day;
+  const mon = new Date(d); mon.setDate(d.getDate()+diff);
+  const sun = new Date(mon); sun.setDate(mon.getDate()+6);
+  const f = x => x.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  return `${f(mon)} – ${f(sun)}`;
+}
+function weekNum() {
+  const d=new Date(), j=new Date(d.getFullYear(),0,1);
+  return Math.ceil(((d-j)/864e5+j.getDay()+1)/7);
+}
+
+// ── PROGRESS ──────────────────────────────────────
+function getProgress() {
+  let done=0, total=6;
+  ['michael','wp'].forEach(p => [0,1,2].forEach(i => {
+    if(localStorage.getItem(pk(p,i))==='true') done++;
+  }));
+  return { done, total };
+}
+
+// ── DOT CANVAS ─────────────────────────────────────
+function drawDots(pct) {
+  const canvas = document.getElementById('dotCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W=220, H=220, cx=110, cy=110;
+  ctx.clearRect(0,0,W,H);
+  const N = 120;
+  const phi = Math.PI*(3-Math.sqrt(5)); // golden angle
+  const maxR = 96;
+  for(let n=0;n<N;n++){
+    const r = maxR * Math.sqrt(n/N);
+    const a = n * phi;
+    const x = cx + r*Math.cos(a);
+    const y = cy + r*Math.sin(a);
+    const active = n < Math.round(pct/100 * N);
+    const size = active ? 2.8 : 1.4;
+    ctx.beginPath();
+    ctx.arc(x,y,size,0,Math.PI*2);
+    ctx.fillStyle = active ? '#111111' : '#DDDDDD';
+    ctx.fill();
+  }
+}
+
+// ── DASHBOARD ─────────────────────────────────────
+function renderDashboard() {
+  const {done,total} = getProgress();
+  const pct = Math.round(done/total*100);
+
+  document.getElementById('pctText').textContent = pct+'%';
+  document.getElementById('pctLabel').textContent =
+    `of posts complete · ${done} of ${total} posted this week`;
+  document.getElementById('weekNum').textContent  = 'Week '+weekNum();
+  document.getElementById('postsLeft').textContent = total-done;
+  document.getElementById('weekRange').textContent = weekRange();
+
+  // Next posting day
+  const now=new Date(), dow=now.getDay();
+  const dayMap = {
+    0: { nextDay:'Monday',    nextPage:'Michael Lawanson — Strategy & Design' },
+    1: { nextDay:'Today',     nextPage:'Michael Lawanson' },
+    2: { nextDay:'Wednesday', nextPage:'Wolf & Pigeons — Industry Take' },
+    3: { nextDay:'Today',     nextPage:'Wolf & Pigeons' },
+    4: { nextDay:'Friday',    nextPage:'Alternating slot' },
+    5: { nextDay:'Today',     nextPage:'Alternating slot' },
+    6: { nextDay:'Monday',    nextPage:'Michael Lawanson — Strategy & Design' },
+  };
+  let { nextDay, nextPage } = dayMap[dow];
+  document.getElementById('nextDay').textContent  = nextDay;
+  document.getElementById('nextPage').textContent = nextPage;
+
+  drawDots(pct);
+
+  // Bar list
+  const bars = document.getElementById('barList');
+  const todayDow = now.getDay();
+  const allSlots = [
+    {page:'michael',i:0,label:'Michael — Strategy & Design',  day:'Monday',   slotDow:1},
+    {page:'michael',i:1,label:'Michael — Strategy & Design',  day:'Wednesday',slotDow:3},
+    {page:'michael',i:2,label:"Michael — Mikey's Chin Chin",  day:'Friday',   slotDow:5},
+    {page:'wp',     i:0,label:'Wolf & Pigeons — Industry',    day:'Monday',   slotDow:1},
+    {page:'wp',     i:1,label:'Wolf & Pigeons — Design Craft',day:'Wednesday',slotDow:3},
+    {page:'wp',     i:2,label:'Wolf & Pigeons — Philosophy',  day:'Friday',   slotDow:5},
+  ];
+  bars.innerHTML = allSlots.map(s => {
+    const posted = localStorage.getItem(pk(s.page,s.i))==='true';
+    const isPast = !posted && s.slotDow < todayDow;
+    const dotCls = s.page==='michael'?'bar-michael':'bar-wp';
+    const statusCls = posted?'status-done':(isPast?'status-missed':'status-pending');
+    const statusTxt = posted?'Posted':(isPast?'Missed':'Pending');
+    return `<div class="bar-row">
+      <div class="bar-dot ${dotCls}"></div>
+      <div class="bar-info">
+        <div class="bar-label">${s.label}</div>
+        <div class="bar-day">${s.day}</div>
+      </div>
+      <span class="bar-status ${statusCls}">${statusTxt}</span>
+    </div>`;
+  }).join('');
+}
+
+// ── BUILD CARDS ────────────────────────────────────
+function buildCards(page) {
+  const el = document.getElementById(`${page}-cards`);
+  el.innerHTML = '';
+  const isM = page==='michael';
+  SLOTS[page].forEach((slot,i) => {
+    const defaultPost = WEEK_POSTS[weekId()]?.[page]?.[i] || '';
+    const saved  = localStorage.getItem(sk(page,i)) || defaultPost;
+    const posted = localStorage.getItem(pk(page,i)) === 'true';
+    const copyClass = isM ? 'btn-copy-m' : 'btn-copy-w';
+    const badgeClass = isM ? 'badge-michael' : 'badge-wp';
+    const div = document.createElement('div');
+    div.className = `post-card${posted?' posted':''}`;
+    div.id = `${page}-card-${i}`;
+    div.innerHTML = `
+      <div class="post-card-top">
+        <div class="post-card-meta">
+          <div class="post-num-row">
+            <span class="post-badge ${badgeClass}">${slot.label}</span>
+            <span class="post-day">${slot.day}</span>
+          </div>
+          <div class="post-pillar">${slot.pillar}</div>
+        </div>
+        <div class="post-card-btns">
+          <button class="btn btn-check${posted?' done':''}" id="${page}-pb-${i}"
+                  onclick="togglePosted('${page}',${i})" style="touch-action:manipulation">✓</button>
+          <button class="btn ${copyClass}"
+                  onclick="copyPost('${page}',${i})" style="touch-action:manipulation">Copy</button>
+        </div>
+      </div>
+      <textarea class="post-textarea" id="${page}-ta-${i}"
+                placeholder="Paste your ${slot.pillar} post here…"
+                oninput="onEdit('${page}',${i})">${saved.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</textarea>
+      <div class="post-char" id="${page}-cc-${i}">${saved.length} chars</div>
+    `;
+    el.appendChild(div);
+  });
+}
+
+// ── EDIT & SAVE ────────────────────────────────────
+function onEdit(page,i) {
+  const val = document.getElementById(`${page}-ta-${i}`).value;
+  localStorage.setItem(sk(page,i), val);
+  document.getElementById(`${page}-cc-${i}`).textContent = val.length+' chars';
+  renderDashboard();
+}
+
+// ── COPY ───────────────────────────────────────────
+function copyPost(page,i) {
+  const ta = document.getElementById(`${page}-ta-${i}`);
+  const text = ta.value;
+  if(!text.trim()){ toast('Nothing to copy — paste a post first'); return; }
+  if(navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(text).then(()=>toast('Copied!')).catch(()=>fbCopy(ta));
+  } else { fbCopy(ta); }
+}
+function fbCopy(ta) {
+  ta.select(); ta.setSelectionRange(0,99999);
+  document.execCommand('copy');
+  window.getSelection()?.removeAllRanges();
+  toast('Copied!');
+}
+
+// ── POSTED ─────────────────────────────────────────
+function togglePosted(page,i) {
+  const cur = localStorage.getItem(pk(page,i))==='true';
+  const next = !cur;
+  localStorage.setItem(pk(page,i), next);
+  document.getElementById(`${page}-card-${i}`).classList.toggle('posted',next);
+  const btn = document.getElementById(`${page}-pb-${i}`);
+  btn.classList.toggle('done',next);
+  renderDashboard();
+}
+
+// ── CLEAR ──────────────────────────────────────────
+function clearWeek(page) {
+  const name = page==='michael'?'Michael Lawanson':'Wolf & Pigeons';
+  if(!confirm(`Clear all ${name} posts for this week?`)) return;
+  [0,1,2].forEach(i=>{
+    localStorage.removeItem(sk(page,i));
+    localStorage.removeItem(pk(page,i));
+  });
+  buildCards(page); renderDashboard();
+}
+function clearAll() {
+  if(!confirm('Clear ALL posts for both pages this week?')) return;
+  ['michael','wp'].forEach(p => [0,1,2].forEach(i=>{
+    localStorage.removeItem(sk(p,i));
+    localStorage.removeItem(pk(p,i));
+  }));
+  buildCards('michael'); buildCards('wp'); renderDashboard();
+}
+
+// ── TABS ───────────────────────────────────────────
+const TAB_TITLES = {
+  dashboard:'The Dispatch', michael:'Michael Lawanson', wp:'Wolf & Pigeons', settings:'Settings'
+};
+const TAB_EYES = {
+  dashboard:'Week of <span id="weekRange">'+weekRange()+'</span>',
+  michael:'Personal page',
+  wp:'Agency page',
+  settings:'Notifications & preferences'
+};
+
+function goTab(id) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-item').forEach(t=>t.classList.remove('active'));
+  document.getElementById(`page-${id}`).classList.add('active');
+  document.getElementById(`tb-${id}`).classList.add('active');
+  document.getElementById('topTitle').textContent = TAB_TITLES[id];
+  document.getElementById('topEyebrow').innerHTML =
+    id==='dashboard' ? `Week of <span>${weekRange()}</span>` : TAB_EYES[id];
+  if(id==='dashboard') renderDashboard();
+  document.querySelector('.scroll-body').scrollTo(0,0);
+}
+
+// ── NTFY ───────────────────────────────────────────
+function getChannel() { return localStorage.getItem('dispatch_channel')||''; }
+function saveChannel() {
+  const val = document.getElementById('channelInput').value.trim();
+  if(!val){ toast('Enter a channel name first'); return; }
+  localStorage.setItem('dispatch_channel', val);
+  toast('Channel saved: '+val);
+}
+async function ntfy(title, body, pri='default') {
+  const ch = getChannel();
+  if(!ch){ toast('Set your ntfy channel in Settings first'); return false; }
+  try {
+    // Use XMLHttpRequest — works cross-origin on iOS Safari from Netlify
+    await new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', `https://ntfy.sh/${encodeURIComponent(ch)}`, true);
+      xhr.setRequestHeader('Title', title);
+      xhr.setRequestHeader('Priority', pri);
+      xhr.setRequestHeader('Tags', 'the-dispatch');
+      xhr.onload  = () => resolve(xhr);
+      xhr.onerror = () => reject(new Error('Network error'));
+      xhr.send(body);
+    });
+    return true;
+  } catch(e) {
+    // Final fallback: fire-and-forget via no-cors mode
+    try {
+      fetch(`https://ntfy.sh/${encodeURIComponent(ch)}`, {
+        method: 'POST', mode: 'no-cors',
+        headers: {'Title': title, 'Priority': pri},
+        body
+      });
+      return true;
+    } catch(e2) {
+      toast('Could not reach ntfy.sh — check your connection');
+      return false;
+    }
+  }
+}
+async function sendTestNotif() {
+  const ok = await ntfy('The Dispatch ✓','Notifications are working! You\'ll be pinged on posting days.','default');
+  if(ok) toast('Test sent to your phone!');
+}
+async function sendReminder(day, page, btnId) {
+  const ok = await ntfy(
+    `Time to post — ${day}`,
+    `${page}\n\nOpen The Dispatch, copy your post, and publish it on LinkedIn.`,
+    'high'
+  );
+  if(ok){
+    toast('Reminder sent!');
+    const btn=document.getElementById(btnId);
+    if(btn){ btn.textContent='Sent ✓'; btn.classList.add('sent');
+      setTimeout(()=>{ btn.textContent='Notify'; btn.classList.remove('sent'); },3500); }
+  }
+}
+
+// ── SHARE LINKS ────────────────────────────────────
+function openShare(page) { goTab('settings'); setTimeout(()=>buildShareLinks(page),50); }
+function buildShareLinks(page) {
+  const pages = page ? [page] : ['michael','wp'];
+  const sec = document.getElementById('shareSection');
+  sec.innerHTML = '';
+  pages.forEach(p => {
+    const posts = [0,1,2].map(i=>localStorage.getItem(sk(p,i))||'');
+    const hasPosts = posts.some(x=>x.trim());
+    const name = p==='michael'?'Michael':'Wolf & Pigeons';
+    if(!hasPosts){
+      sec.innerHTML += `<div class="share-box">${name}: no posts pasted yet.</div>`;
+      return;
+    }
+    const data = {page:p, week:weekId(), posts};
+    const enc = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+    const base = window.location.href.split('?')[0].split('#')[0];
+    const url = `${base}?load=${enc}`;
+    const short = url.length>60 ? url.slice(0,60)+'…' : url;
+    sec.innerHTML += `<div class="share-box">${short}</div>`;
+    const btn = document.createElement('button');
+    btn.className = 'action-btn action-ghost';
+    btn.style.marginBottom='10px';
+    btn.textContent = `Copy ${name} Link`;
+    btn.setAttribute('onclick', `copyLink('${url.replace(/'/g,"\\'")}','${name}')`);
+    sec.appendChild(btn);
+  });
+}
+function copyLink(url, name) {
+  if(navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(url).then(()=>toast(`${name} link copied!`));
+  } else {
+    const ta=document.createElement('textarea');
+    ta.value=url; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+    toast(`${name} link copied!`);
+  }
+}
+
+// ── LOAD FROM URL ──────────────────────────────────
+function loadFromUrl() {
+  const p = new URLSearchParams(window.location.search).get('load');
+  if(!p) return;
+  try {
+    const d = JSON.parse(decodeURIComponent(escape(atob(p))));
+    if(!d.page||!Array.isArray(d.posts)) return;
+    d.posts.forEach((text,i)=>{ if(text) localStorage.setItem(sk(d.page,i),text); });
+    buildCards('michael'); buildCards('wp'); renderDashboard();
+    goTab(d.page);
+    toast(`Posts loaded into ${d.page==='michael'?'Michael':'Wolf & Pigeons'}!`);
+    window.history.replaceState({},'',window.location.pathname);
+  } catch(e){}
+}
+
+// ── TOAST ──────────────────────────────────────────
+function toast(msg, ms=2400) {
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(el._t);
+  el._t=setTimeout(()=>el.classList.remove('show'),ms);
+}
+
+// ── BOOT ───────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', ()=>{
+  buildCards('michael');
+  buildCards('wp');
+  renderDashboard();
+  loadFromUrl();
+  const ch=localStorage.getItem('dispatch_channel')||'';
+  if(ch) document.getElementById('channelInput').value=ch;
+});
+</script>
+</body>
+</html>
